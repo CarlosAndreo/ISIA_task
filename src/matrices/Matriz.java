@@ -46,7 +46,20 @@ public class Matriz {
             } 
         } 
         return matrizResultante; 
-    } 
+    }
+
+    public static Matriz trasponerMatriz(Matriz m) {
+        int height = m.getDimension().height;
+        int width = m.getDimension().width;
+
+        Matriz matrizResultante = new Matriz(width, height, false);
+        for(int j = 0; j < height; j++) {
+            for(int i = 0; i < width; i++) {
+                matrizResultante.datos[j][i] = m.datos[i][j];
+            }
+        }
+        return matrizResultante;
+    }
 
     @Override
     public String toString(){
